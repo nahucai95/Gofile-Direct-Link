@@ -1,9 +1,9 @@
 services:
-  - type: job
-    name: gofile-downloader
-    env: python
-    region: oregon
+  - type: web
+    name: gofile-direct-link
+    env: php
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python run.py https://gofile.io/d/TU_ID -d ./output
-    autoDeploy: false
+    buildCommand: "composer install" # Solo si tienes dependencias PHP que instalar, si no puedes eliminar esta línea
+    startCommand: "php -S 0.0.0.0:10000 index.php"
+    healthCheckPath: "/"
+    timeoutInSeconds: 300
