@@ -3,7 +3,7 @@ services:
     name: gofile-direct-link
     env: php
     plan: free
-    buildCommand: "composer install" # Solo si tienes dependencias PHP que instalar, si no puedes eliminar esta línea
+    buildCommand: ""
     startCommand: "php -S 0.0.0.0:10000 index.php"
     healthCheckPath: "/"
     timeoutInSeconds: 300
