@@ -1,0 +1,9 @@
+services:
+  - type: job
+    name: gofile-downloader
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py https://gofile.io/d/TU_ID -d ./output
+    autoDeploy: false
